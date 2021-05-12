@@ -1,18 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnLevelsButtonClick()
     {
-        
+        // TODO
+        Debug.Log("Levels");
+        SceneManager.LoadScene("Levels");
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnPlayButtonClick()
     {
-        
+        // TODO
+        Debug.Log("Play");
+        SceneManager.LoadScene("LVL1");
+    }
+    public void OnCreditsButtonPress()
+    {
+        // TODO
+        Debug.Log("Credits");
+        SceneManager.LoadScene("Credits");
+    }
+    public void OnExitButtonPress()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+        //Application.Quit();
     }
 }
