@@ -24,11 +24,32 @@ EditorBuildSettings:
     path: Assets/Scenes/LVL5.unity
     guid: 42946fa339487e943a1846d7136116ad
   - enabled: 1
+    path: Assets/Scenes/LVL6.unity
+    guid: 2f08a66654b985945a2a5bcd27b98e52
+  - enabled: 1
+    path: Assets/Scenes/LVL7.unity
+    guid: 9ef0e51d9755e174486b1e3055f4d113
+  - enabled: 1
+    path: Assets/Scenes/LVL8.unity
+    guid: 2df60b2a531248c499755d0e5292c6e9
+  - enabled: 1
+    path: Assets/Scenes/LVL9.unity
+    guid: 40b35c384b617b942b4a154b51b123ff
+  - enabled: 1
+    path: Assets/Scenes/LVL10.unity
+    guid: 001d49ab4a7fd7c478dd89a961528831
+  - enabled: 1
     path: Assets/Scenes/Levels.unity
     guid: 58618aae2a4b64c4980c7b4308c9d9a6
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: dd6d8117edc29904a8b3e29b0aa637b4
+  - enabled: 1
+    path: Assets/Scenes/HowTo.unity
+    guid: 3ec78834cd5aaac4ab2dc3781d0e5afd
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 745543a356c8b8b498ac2019d0c31ccd
   - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: 708a96687b6c58c4ca34fb99cabb1a07

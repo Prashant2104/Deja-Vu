@@ -7,22 +7,44 @@ public class Menu : MonoBehaviour
 {
     public void OnLevelsButtonClick()
     {
-        // TODO
         Debug.Log("Levels");
         SceneManager.LoadScene("Levels");
     }
     public void OnPlayButtonClick()
     {
-        // TODO
         Debug.Log("Play");
-        SceneManager.LoadScene("LVL1");
+        Debug.Log(PlayerPrefs.GetInt("LevelsUnlocked"));
+        if(PlayerPrefs.GetInt("LevelsUnlocked") == 0)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("LevelsUnlocked"));
+        }
+    }
+    public void OnBackButtonClick()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
     public void OnCreditsButtonPress()
     {
-        // TODO
         Debug.Log("Credits");
         SceneManager.LoadScene("Credits");
     }
+
+    public void OnHowToButtonPress()
+    {
+        Debug.Log("HowTo");
+        SceneManager.LoadScene("HowTo");
+    }
+
+    public void OnControlsButtonPress()
+    {
+        Debug.Log("Controls");
+        SceneManager.LoadScene("Controls");
+    }
+
     public void OnExitButtonPress()
     {
         UnityEditor.EditorApplication.isPlaying = false;
