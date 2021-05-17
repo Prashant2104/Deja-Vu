@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     void Start()
     {
+        CurrentLevel = SceneManager.GetActiveScene().buildIndex;
         Camera = FindObjectOfType<CameraManager>();
         pause = FindObjectOfType<Pause>();
         Rigidbody = GetComponent<Rigidbody2D>();
@@ -28,8 +29,16 @@ public class Player : MonoBehaviour
     }
 
     void Update()
-    {
-        Rigidbody.velocity = new Vector2(InputX * speed, InputY * (speed / 2));
+    {        
+        if(CurrentLevel != 10)
+        {
+            Rigidbody.velocity = new Vector2(InputX * speed, Rigidbody.velocity.y);
+        }
+        if(CurrentLevel == 10)
+        {
+            Rigidbody.velocity = new Vector2(InputX * speed, InputY * (speed / 2));
+            animator.SetBool("Walk", false);
+        }
 
         if (Rigidbody.velocity.x > 0f)
         {
@@ -122,8 +131,6 @@ public class Player : MonoBehaviour
 
     public void Pass()
     {
-        CurrentLevel = SceneManager.GetActiveScene().buildIndex;
-
         if (CurrentLevel >= PlayerPrefs.GetInt("LevelsUnlocked"))
         {
             PlayerPrefs.SetInt("LevelsUnlocked", CurrentLevel + 1);

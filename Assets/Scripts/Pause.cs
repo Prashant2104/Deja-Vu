@@ -58,6 +58,7 @@ public class Pause : MonoBehaviour
     {
         Debug.Log("Mute");
         mute.Mute();
+        OnResumeButtonClick();
     }
 
     public void OnExitButtonPress()

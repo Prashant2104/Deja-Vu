@@ -623,15 +623,15 @@ MonoBehaviour:
 
     SpaceBar to jump
 
-    P to pause
+    Esc to pause/play
 
 
     Left
     stick for movement
 
-    A/X for jump
+    B/O for jump
 
-    Start to pause'
+    Start to pause/play'
 --- !u!222 &1304761409
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 577677037}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1430710343
