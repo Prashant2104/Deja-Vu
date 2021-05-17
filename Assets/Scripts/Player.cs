@@ -10,14 +10,18 @@ public class Player : MonoBehaviour
 
     public float speed, jump;
     public GameObject Key;
-  
 
+    private Pause pause;
+    private CameraManager Camera;
     private Rigidbody2D Rigidbody;
     private float InputX;
+    private float InputY;
     private SpriteRenderer Spriterenderer;
     private Animator animator;
     void Start()
     {
+        Camera = FindObjectOfType<CameraManager>();
+        pause = FindObjectOfType<Pause>();
         Rigidbody = GetComponent<Rigidbody2D>();
         Spriterenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -25,7 +29,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Rigidbody.velocity = new Vector2(InputX * speed, Rigidbody.velocity.y);
+        Rigidbody.velocity = new Vector2(InputX * speed, InputY * (speed / 2));
 
         if (Rigidbody.velocity.x > 0f)
         {
@@ -58,6 +62,7 @@ public class Player : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         InputX = context.ReadValue<Vector2>().x;
+        InputY = context.ReadValue<Vector2>().y;
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -66,6 +71,10 @@ public class Player : MonoBehaviour
         {
             Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
         }
+    }
+    public void Pause_Start(InputAction.CallbackContext context)
+    {
+        pause.PauseButton();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -96,6 +105,19 @@ public class Player : MonoBehaviour
         {
             Pass();
         }
+
+        if (collision.gameObject.tag == "Switch")
+        {
+            Camera.Move();
+            if(Camera.Count == true)
+            {
+                collision.transform.position = new Vector2(11, 0);
+            }
+            if(Camera.Count == false)
+            {
+                collision.transform.position = new Vector2(14, 0);
+            }
+        }        
     }
 
     public void Pass()

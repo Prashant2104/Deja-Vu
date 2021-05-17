@@ -8,6 +8,8 @@ TagManager:
   - Spikes
   - Key
   - Gate_On
+  - Trigger
+  - Switch
   layers:
   - Default
   - TransparentFX

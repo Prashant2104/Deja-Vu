@@ -322,6 +322,25 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4500c061-f227-48ee-8909-7b128a3bf937
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cea76121-0d5a-4f75-9f47-c44ef7d984a0
+    m_ActionName: UI/Pause[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4463474281481628396}
+        m_MethodName: Pause_Start
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ab836f4e-d4bb-4f83-9639-b5838ecadaf1
+    m_ActionName: Player/Pause[/XInputControllerWindows/start,/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

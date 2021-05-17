@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Gate : MonoBehaviour
 {
@@ -17,7 +18,18 @@ public class Gate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void OpenGate()
+    {
+        Debug.Log("Enter");
+        animator.SetBool("Enter", true);
+    }
+    public void CloseGate()
+    {
+        Debug.Log("Closed");
+        animator.SetBool("Enter", false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
