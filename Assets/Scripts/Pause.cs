@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
     public GameObject PauseMenu;
     public GameObject Camera;
-    public bool IsPaused;
+    public GameObject FirstButton;
+
+    public static bool IsPaused = true;
 
     private CameraManager mute;
     void Start()
@@ -23,7 +25,7 @@ public class Pause : MonoBehaviour
 
     }
 
-    public void PauseButton()
+    /*public void PauseButton()
     {
         if(IsPaused == true)
         {
@@ -33,25 +35,30 @@ public class Pause : MonoBehaviour
         {
             OnPauseButtonClick();
         }
-    }
+    }*/
 
     public void OnPauseButtonClick()
     {
         PauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        IsPaused = true;
+        //IsPaused = true;
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(FirstButton);
     }
 
     public void OnResumeButtonClick()
     {
+        Debug.Log("Resume");
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        IsPaused = false;
+        //IsPaused = false;
     }
 
     public void OnMenuButtonClick()
     {
         SceneManager.LoadScene("Main Menu");
+        Time.timeScale = 1f;
     }
 
     public void OnMuteButtonClick()

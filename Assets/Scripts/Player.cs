@@ -83,7 +83,18 @@ public class Player : MonoBehaviour
     }
     public void Pause_Start(InputAction.CallbackContext context)
     {
-        pause.PauseButton();
+        Debug.Log("Pause press");
+        //pause.PauseButton();
+        if(Pause.IsPaused)
+        {
+            pause.OnPauseButtonClick();
+            Pause.IsPaused = !Pause.IsPaused;
+        }
+        else
+        {
+            pause.OnResumeButtonClick();
+            Pause.IsPaused = !Pause.IsPaused;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

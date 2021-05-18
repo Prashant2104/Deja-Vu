@@ -513,6 +513,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 1223776203394535521, guid: 7654312666b9267498b7a9e9b6059735,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1223776203394535526, guid: 7654312666b9267498b7a9e9b6059735,
         type: 3}
       propertyPath: m_RootOrder
@@ -582,6 +587,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3764731082125560817, guid: 45ed391a794904542a3ddb55961859cb,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3764731082125560818, guid: 45ed391a794904542a3ddb55961859cb,
         type: 3}
       propertyPath: m_Camera
@@ -697,10 +707,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3764731082450838749, guid: 45ed391a794904542a3ddb55961859cb,
+    - target: {fileID: 3764731082450838748, guid: 45ed391a794904542a3ddb55961859cb,
         type: 3}
-      propertyPath: m_Text
-      value: 1.Plain and Simple
+      propertyPath: m_AnchoredPosition.x
+      value: -105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764731082450838748, guid: 45ed391a794904542a3ddb55961859cb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45ed391a794904542a3ddb55961859cb, type: 3}
