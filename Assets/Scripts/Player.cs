@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     int CurrentLevel;
 
-    public static int DeathCount = 0;
+    public int DeathCount = 0;
     public float speed, jump;
     public GameObject Key;
     public GameObject DeadBody;
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
             animator.SetBool("Walk", false);
         }
 
-        if (DeathCount == 3)
+        if (DeathCount >= 3)
         {
             SceneManager.LoadScene("Game Over");
         }

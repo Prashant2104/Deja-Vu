@@ -981,6 +981,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4463474281481628304, guid: af52794b0cf8c98429d9b759b9b679a4,
         type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463474281481628304, guid: af52794b0cf8c98429d9b759b9b679a4,
+        type: 3}
       propertyPath: m_GravityScale
       value: 0.5
       objectReference: {fileID: 0}
@@ -988,6 +993,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chiaki sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463474281481628396, guid: af52794b0cf8c98429d9b759b9b679a4,
+        type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4463474281481628397, guid: af52794b0cf8c98429d9b759b9b679a4,
         type: 3}

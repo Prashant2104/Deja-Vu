@@ -800,6 +800,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chiaki sprite
       objectReference: {fileID: 0}
+    - target: {fileID: 4463474281481628396, guid: af52794b0cf8c98429d9b759b9b679a4,
+        type: 3}
+      propertyPath: jump
+      value: 8.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4463474281481628397, guid: af52794b0cf8c98429d9b759b9b679a4,
         type: 3}
       propertyPath: m_RootOrder
