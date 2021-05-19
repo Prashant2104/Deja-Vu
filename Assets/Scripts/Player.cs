@@ -109,12 +109,12 @@ public class Player : MonoBehaviour
     {
         DeathCount++;
         SceneManager.LoadScene(CurrentLevel);
-        GameObject Dead = Instantiate(DeadBody) as GameObject;
+     /* GameObject Dead = Instantiate(DeadBody) as GameObject;
         Dead.transform.position = transform.position;
         Dead.GetComponent<Rigidbody2D>().velocity = Rigidbody.velocity;
         Physics2D.IgnoreCollision(Dead.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
-        /*transform.position = SpawnPoint.position;
+        transform.position = SpawnPoint.position;
         gameObject.transform.GetChild(1).gameObject.SetActive(false);        */
     }
 
