@@ -66,6 +66,7 @@ public class Pause : MonoBehaviour
         Debug.Log("Mute");
         mute.Mute();
         OnResumeButtonClick();
+        IsPaused = !IsPaused;
     }
 
     public void OnExitButtonPress()

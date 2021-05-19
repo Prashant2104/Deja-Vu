@@ -8,8 +8,11 @@ public class Player : MonoBehaviour
 {
     int CurrentLevel;
 
+    public static int DeathCount = 0;
     public float speed, jump;
     public GameObject Key;
+    public GameObject DeadBody;
+    public Transform SpawnPoint;
 
     private Pause pause;
     private CameraManager Camera;
@@ -66,6 +69,11 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("Walk", false);
         }
+
+        if (DeathCount == 3)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -97,6 +105,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Kill()
+    {
+        DeathCount++;
+        SceneManager.LoadScene(CurrentLevel);
+        GameObject Dead = Instantiate(DeadBody) as GameObject;
+        Dead.transform.position = transform.position;
+        Dead.GetComponent<Rigidbody2D>().velocity = Rigidbody.velocity;
+        Physics2D.IgnoreCollision(Dead.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
+        /*transform.position = SpawnPoint.position;
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);        */
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Key")
@@ -108,6 +129,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Gate_On")
         {
             animator.SetBool("Glitch", true);
+        }
+
+        if (collision.gameObject.tag == "Spikes")
+        {
+            Kill();
         }
     }
 

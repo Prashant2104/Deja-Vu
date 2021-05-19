@@ -10,6 +10,7 @@ TagManager:
   - Gate_On
   - Trigger
   - Switch
+  - Dead
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - 
   - 
   - Platforms
-  - 
-  - 
+  - Player
+  - Dead
   - 
   - 
   - 
