@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Blocks : MonoBehaviour
 {
-    public float speed;
+    int CurrentLevel;
+    public float speed = 0;
     private Rigidbody2D rigidBody2D;
     // Start is called before the first frame update
     void Start()
     {
+        CurrentLevel = SceneManager.GetActiveScene().buildIndex;
         rigidBody2D = GetComponent<Rigidbody2D>();
-        speed = Random.Range(1f, 10f);
+        
+        if (CurrentLevel == 6)
+        {
+            speed = Random.Range(1f, 10f);
+        }
     }
 
     // Update is called once per frame
@@ -33,6 +40,17 @@ public class Blocks : MonoBehaviour
         {
             speed = speed * -1;
             transform.localScale = new Vector3((transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);            
+        }
+
+        if (CurrentLevel == 14)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                rigidBody2D.constraints = RigidbodyConstraints2D.None;
+                rigidBody2D.gravityScale = 0.5f;
+                //rigidBody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
+                //rigidBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
         }
     }
 }

@@ -13,10 +13,14 @@ public class CameraManager : MonoBehaviour
     void Start()
     {
         LevelIndex = SceneManager.GetActiveScene().buildIndex;
-
         gate = FindObjectOfType<Gate>();
         IsMuted = false;
         LevelIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame

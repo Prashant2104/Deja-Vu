@@ -122,8 +122,11 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Key")
         {
-            Destroy(collision.gameObject);
-            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            if(CurrentLevel != 13)
+            {
+                Destroy(collision.gameObject);
+                gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            }
         }
 
         if (collision.gameObject.tag == "Gate_On")

@@ -41,4 +41,14 @@ public class Gate : MonoBehaviour
             animator.SetBool("Enter", true);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Key")
+        {
+            //gameObject.SetActive(false);
+            Debug.Log("Enter");
+            animator.SetBool("Enter", true);
+        }
+    }
 }

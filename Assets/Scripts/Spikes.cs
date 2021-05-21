@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Spikes : MonoBehaviour
 {
+    private Rigidbody2D rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -17,11 +18,12 @@ public class Spikes : MonoBehaviour
         
     }
 
-   /* private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Game Over");
+            rigidbody.constraints = RigidbodyConstraints2D.None;
+            rigidbody.gravityScale = 0.5f;
         }
-    }*/
+    }
 }
