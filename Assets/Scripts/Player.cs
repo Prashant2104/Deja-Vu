@@ -33,11 +33,15 @@ public class Player : MonoBehaviour
 
     void Update()
     {        
-        if(CurrentLevel != 10)
+        if(CurrentLevel != 10 && CurrentLevel != 16)
         {
             Rigidbody.velocity = new Vector2(InputX * speed, Rigidbody.velocity.y);
         }
-        if(CurrentLevel == 10)
+        if (CurrentLevel == 16)
+        {
+            Rigidbody.velocity = new Vector2(-(InputX * speed), Rigidbody.velocity.y);
+        }
+        if (CurrentLevel == 10)
         {
             Rigidbody.velocity = new Vector2(InputX * speed, InputY * (speed / 2));
             animator.SetBool("Walk", false);
@@ -95,6 +99,10 @@ public class Player : MonoBehaviour
                     Counter.C = 0;
                 }
             }
+        }
+        if (context.performed && CurrentLevel == 17)
+        {
+            Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
         }
     }
     public void Pause_Start(InputAction.CallbackContext context)

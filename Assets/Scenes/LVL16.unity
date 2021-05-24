@@ -517,7 +517,7 @@ PrefabInstance:
     - target: {fileID: 3764731082450838749, guid: 45ed391a794904542a3ddb55961859cb,
         type: 3}
       propertyPath: m_Text
-      value: 16.
+      value: 16.Disoriented
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45ed391a794904542a3ddb55961859cb, type: 3}
