@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Blocks : MonoBehaviour
 {
     int CurrentLevel;
-    public float speed = 0;
+    public float speed;
     private Rigidbody2D rigidBody2D;
     // Start is called before the first frame update
     void Start()
@@ -28,28 +28,26 @@ public class Blocks : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Trigger")
+        if (collision.gameObject.CompareTag("Trigger"))
         {
-            speed = speed * -1;
+            speed *= -1;
             transform.localScale = new Vector3((transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            speed = speed * -1;
+            speed *= -1;
             transform.localScale = new Vector3((transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);            
         }
 
         if (CurrentLevel == 14)
         {
-            if (collision.gameObject.tag == "Player")
+            if (collision.gameObject.CompareTag("Player"))
             {
                 rigidBody2D.constraints = RigidbodyConstraints2D.None;
                 rigidBody2D.gravityScale = 0.5f;
-                //rigidBody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
-                //rigidBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
         }
     }

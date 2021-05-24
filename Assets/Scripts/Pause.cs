@@ -18,25 +18,6 @@ public class Pause : MonoBehaviour
         mute = FindObjectOfType<CameraManager>();
         PauseMenu.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    /*public void PauseButton()
-    {
-        if(IsPaused == true)
-        {
-            OnResumeButtonClick();
-        }
-        else
-        {
-            OnPauseButtonClick();
-        }
-    }*/
-
     public void OnPauseButtonClick()
     {
         PauseMenu.SetActive(true);

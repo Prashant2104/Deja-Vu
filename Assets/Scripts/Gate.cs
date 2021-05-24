@@ -6,19 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class Gate : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void OpenGate()
@@ -34,7 +26,7 @@ public class Gate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Key")
+        if(collision.gameObject.CompareTag("Key"))
         {
             //gameObject.SetActive(false);
             Debug.Log("Enter");
@@ -44,7 +36,7 @@ public class Gate : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Key")
+        if (collision.gameObject.CompareTag("Key"))
         {
             //gameObject.SetActive(false);
             Debug.Log("Enter");

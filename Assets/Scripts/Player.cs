@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Key")
+        if(collision.gameObject.CompareTag("Key"))
         {
             if(CurrentLevel != 13)
             {
@@ -145,12 +145,12 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.tag == "Gate_On")
+        if (collision.gameObject.CompareTag("Gate_On"))
         {
             animator.SetBool("Glitch", true);
         }
 
-        if (collision.gameObject.tag == "Spikes")
+        if (collision.gameObject.CompareTag("Spikes"))
         {
             Kill();
         }
@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Gate_On")
+        if (collision.gameObject.CompareTag("Gate_On"))
         {
             animator.SetBool("Glitch", false);
         }
@@ -166,13 +166,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Finish")
+        if(collision.gameObject.CompareTag("Finish"))
         {
             Pass();
             Camera.DDOL();
         }
 
-        if (collision.gameObject.tag == "Switch")
+        if (collision.gameObject.CompareTag("Switch"))
         {
             Camera.Move();
             if(Camera.Count == true)

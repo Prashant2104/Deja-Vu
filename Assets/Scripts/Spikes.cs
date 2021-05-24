@@ -5,25 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Spikes : MonoBehaviour
 {
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D RB;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        RB = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            rigidbody.constraints = RigidbodyConstraints2D.None;
-            rigidbody.gravityScale = 0.5f;
+            RB.constraints = RigidbodyConstraints2D.None;
+            RB.gravityScale = 0.5f;
         }
     }
 }
