@@ -87,6 +87,14 @@ public class Player : MonoBehaviour
         if (context.performed && IsGrounded())
         {
             Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
+            if(CurrentLevel == 15)
+            {
+                Counter.C++;
+                if(Counter.C == 10)
+                {
+                    Counter.C = 0;
+                }
+            }
         }
     }
     public void Pause_Start(InputAction.CallbackContext context)
