@@ -105,7 +105,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5181454123257833608, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
 --- !u!4 &936145253265221532 stripped
 Transform:
@@ -190,7 +191,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5181454123257833608, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
 --- !u!4 &361224452323406433 stripped
 Transform:
@@ -265,7 +267,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5181454123257833608, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
 --- !u!4 &390593188294708430 stripped
 Transform:
@@ -340,7 +343,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5181454123257833608, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
 --- !u!4 &4006236793243270192 stripped
 Transform:
@@ -425,7 +429,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5181454123257833608, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
 --- !u!4 &4006236794201266848 stripped
 Transform:
@@ -510,7 +515,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5181454123257833608, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
 --- !u!4 &2767470965721032088 stripped
 Transform:
@@ -585,7 +591,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5181454123257833608, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
 --- !u!4 &6300807975389015775 stripped
 Transform:
@@ -670,7 +677,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5181454123257833608, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 503e65e018145e3429c71b67fef57d5f, type: 3}
 --- !u!4 &6945320006164554643 stripped
 Transform:

@@ -287,7 +287,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 19
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1452,7 +1452,7 @@ RectTransform:
   m_Children:
   - {fileID: 166545176}
   m_Father: {fileID: 1153371420}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1508,7 +1508,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 21
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2184,7 +2184,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 22
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2732,7 +2732,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 24
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3119,8 +3119,8 @@ RectTransform:
   - {fileID: 1654008504}
   - {fileID: 2007041249}
   - {fileID: 14277668}
-  - {fileID: 617836531}
   - {fileID: 1634703575}
+  - {fileID: 617836531}
   - {fileID: 879645370}
   - {fileID: 1692396640}
   - {fileID: 1041479086}
@@ -3162,6 +3162,15 @@ MonoBehaviour:
   - {fileID: 229295299}
   - {fileID: 1582070926}
   - {fileID: 2029559402}
+  - {fileID: 1192151121}
+  - {fileID: 1654008505}
+  - {fileID: 2007041250}
+  - {fileID: 14277669}
+  - {fileID: 1634703576}
+  - {fileID: 617836532}
+  - {fileID: 879645371}
+  - {fileID: 1692396641}
+  - {fileID: 1041479087}
 --- !u!1 &1179378323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4371,7 +4380,7 @@ RectTransform:
   m_Children:
   - {fileID: 1333947091}
   m_Father: {fileID: 1153371420}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4427,7 +4436,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 20
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4635,7 +4644,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 17
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4765,7 +4774,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 23
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5597,7 +5606,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 18
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

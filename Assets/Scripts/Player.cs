@@ -153,6 +153,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "Finish")
         {
             Pass();
+            Camera.DDOL();
         }
 
         if (collision.gameObject.tag == "Switch")

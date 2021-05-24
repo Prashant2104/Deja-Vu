@@ -18,15 +18,10 @@ public class CameraManager : MonoBehaviour
         LevelIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if(LevelIndex == 8)
+        if (LevelIndex == 8)
         {
             if (IsMuted == true)
             {
@@ -36,18 +31,18 @@ public class CameraManager : MonoBehaviour
             {
                 gate.CloseGate();
             }
-        }        
+        }
     }
 
     public void Move()
     {
         Count = !Count;
 
-        if(Count == true)
+        if (Count == true)
         {
             transform.position = new Vector3(transform.position.x + 25.5f, transform.position.y, -10);
         }
-        if(Count == false)
+        if (Count == false)
         {
             transform.position = new Vector3(transform.position.x - 25.5f, transform.position.y, -10);
         }
@@ -57,5 +52,10 @@ public class CameraManager : MonoBehaviour
     {
         IsMuted = !IsMuted;
         AudioListener.pause = IsMuted;
+    }
+
+    public void DDOL()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 }

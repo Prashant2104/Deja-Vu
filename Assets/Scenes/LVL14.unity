@@ -403,6 +403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3764731082450838749, guid: 45ed391a794904542a3ddb55961859cb,
+        type: 3}
+      propertyPath: m_Text
+      value: 14.Be Quick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45ed391a794904542a3ddb55961859cb, type: 3}
 --- !u!1001 &736389586
@@ -969,9 +974,16 @@ PrefabInstance:
     - target: {fileID: 7816932682632307125, guid: 4dbba66eeea5eeb4f8cbd008aa6574bf,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4287684439743256710, guid: 4dbba66eeea5eeb4f8cbd008aa6574bf, type: 3}
+    - {fileID: 905969547935569354, guid: 4dbba66eeea5eeb4f8cbd008aa6574bf, type: 3}
+    - {fileID: 7816932681909438245, guid: 4dbba66eeea5eeb4f8cbd008aa6574bf, type: 3}
+    - {fileID: 9046141580255534733, guid: 4dbba66eeea5eeb4f8cbd008aa6574bf, type: 3}
+    - {fileID: 6277889088813882505, guid: 4dbba66eeea5eeb4f8cbd008aa6574bf, type: 3}
+    - {fileID: 6812252541208344539, guid: 4dbba66eeea5eeb4f8cbd008aa6574bf, type: 3}
+    - {fileID: 6836748188425914740, guid: 4dbba66eeea5eeb4f8cbd008aa6574bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4dbba66eeea5eeb4f8cbd008aa6574bf, type: 3}
 --- !u!1 &1545149589 stripped
 GameObject:
