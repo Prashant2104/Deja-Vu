@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: c5a50769d5ad2b94d8365b310a814a40
+guid: 9b608632f9babb34cbe7a56fbd98118a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3903307725210742019
-    second: Chiaki sprite- walk_0
+      213: 3243349926216917241
+    second: Falling_Spikes_0
   - first:
-      213: 2235221085973012978
-    second: Chiaki sprite- walk_1
+      213: -3251899559699488014
+    second: Falling_Spikes_1
+  - first:
+      213: -3830442643436030856
+    second: Falling_Spikes_2
+  - first:
+      213: 6340562861272845453
+    second: Falling_Spikes_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -90,7 +96,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -102,7 +108,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -117,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chiaki sprite- walk_0
+      name: Falling_Spikes_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 4
-        width: 218
-        height: 253
+        x: 19
+        y: 0
+        width: 62
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df296c5fd4aa4d9c0800000000000000
-      internalID: -3903307725210742019
+      spriteID: 9f0e27ae291b20d20800000000000000
+      internalID: 3243349926216917241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chiaki sprite- walk_1
+      name: Falling_Spikes_1
       rect:
         serializedVersion: 2
-        x: 282
-        y: 7
-        width: 218
-        height: 253
+        x: 119
+        y: 0
+        width: 62
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +158,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f162e72cb9150f10800000000000000
-      internalID: 2235221085973012978
+      spriteID: 2f2ecda649eeed2d0800000000000000
+      internalID: -3251899559699488014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling_Spikes_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 62
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874bc79d5b887dac0800000000000000
+      internalID: -3830442643436030856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling_Spikes_3
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 0
+        width: 62
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8cc33e14543ef750800000000000000
+      internalID: 6340562861272845453
       vertices: []
       indices: 
       edges: []

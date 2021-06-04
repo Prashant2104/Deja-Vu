@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,7 @@ public class Pause : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject Camera;
     public GameObject FirstButton;
+    public Text Timer;
 
     public static bool IsPaused = true;
 
@@ -18,11 +20,11 @@ public class Pause : MonoBehaviour
         mute = FindObjectOfType<CameraManager>();
         PauseMenu.SetActive(false);
     }
+
     public void OnPauseButtonClick()
     {
         PauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        //IsPaused = true;
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(FirstButton);
@@ -33,7 +35,6 @@ public class Pause : MonoBehaviour
         Debug.Log("Resume");
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        //IsPaused = false;
     }
 
     public void OnMenuButtonClick()

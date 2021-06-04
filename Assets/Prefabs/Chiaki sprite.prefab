@@ -215,8 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b694abf5a58d34583145116bcee88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathCount: 0
   speed: 4
-  jump: 8
+  jump: 8.2
   Key: {fileID: 5519372938789464202, guid: 2a9366eb510ccd341a0b4269d375d908, type: 3}
   DeadBody: {fileID: 953227064705003359, guid: 7095b063cdedeb849828775e2f99d86d, type: 3}
   SpawnPoint: {fileID: 2412344245857606048, guid: a0ad8e3f7df680d4ab666e2bcd200266,
@@ -362,8 +363,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015921116, y: -0.03312254}
-  m_Size: {x: 1.5048246, y: 2.4246778}
+  m_Offset: {x: 0, y: -0.01215458}
+  m_Size: {x: 1.4987091, y: 2.4999566}
   m_Direction: 0
 --- !u!1001 &4463474281401171800
 PrefabInstance:

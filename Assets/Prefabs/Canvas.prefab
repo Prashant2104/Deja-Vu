@@ -636,6 +636,7 @@ MonoBehaviour:
   PauseMenu: {fileID: 5310704967997530173}
   Camera: {fileID: 0}
   FirstButton: {fileID: 2029515990409544392}
+  Timer: {fileID: 0}
 --- !u!1 &3764731082450838739
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8017481929838540183
 RectTransform:
   m_ObjectHideFlags: 0

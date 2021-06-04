@@ -10,9 +10,13 @@ public class Levels : MonoBehaviour
     int LevelsUnlocked;
 
     public Button[] buttons;
+
+    private TimeController time;
     // Start is called before the first frame update
     void Start()
     {
+        time = FindObjectOfType<TimeController>();
+
         LevelsUnlocked = PlayerPrefs.GetInt("LevelsUnlocked", 1);
 
         for(int i = 0; i < buttons.Length; i++)
@@ -29,6 +33,7 @@ public class Levels : MonoBehaviour
     public void LoadLevel(int LevelIndex)
     {
         SceneManager.LoadScene(LevelIndex);
+        time.BeginTimer();
     }
     public void ResetProgression()
     {

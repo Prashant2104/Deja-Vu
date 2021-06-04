@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Sounds : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static Sounds sounds;
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (sounds != null && sounds != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        sounds = this;
+        DontDestroyOnLoad(this);
     }
 }

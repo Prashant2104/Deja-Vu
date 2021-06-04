@@ -29,11 +29,15 @@ public class Player : MonoBehaviour
         Rigidbody = GetComponent<Rigidbody2D>();
         Spriterenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-    }
 
+        if (CurrentLevel == 18)
+        {
+            StartCoroutine(Ninja());
+        }
+    }
     void Update()
     {        
-        if(CurrentLevel != 10 && CurrentLevel != 16)
+        if(CurrentLevel != 10 && CurrentLevel != 16 && CurrentLevel != 22)
         {
             Rigidbody.velocity = new Vector2(InputX * speed, Rigidbody.velocity.y);
         }
@@ -41,7 +45,7 @@ public class Player : MonoBehaviour
         {
             Rigidbody.velocity = new Vector2(-(InputX * speed), Rigidbody.velocity.y);
         }
-        if (CurrentLevel == 10)
+        if (CurrentLevel == 10 || CurrentLevel == 22)
         {
             Rigidbody.velocity = new Vector2(InputX * speed, InputY * (speed / 2));
             animator.SetBool("Walk", false);
@@ -50,10 +54,12 @@ public class Player : MonoBehaviour
         if (Rigidbody.velocity.x > 0f)
         {
             Spriterenderer.flipX = false;
+            //gameObject.transform.GetChild(1).gameObject.transform.position = new Vector2(gameObject.transform.GetChild(1).gameObject.transform.position.x, gameObject.transform.GetChild(1).gameObject.transform.position.y);
         }
         else if (Rigidbody.velocity.x < 0f)
         {
             Spriterenderer.flipX = true;
+            //gameObject.transform.GetChild(1).gameObject.transform.position = new Vector2(gameObject.transform.GetChild(1).gameObject.transform.position.x * -1, gameObject.transform.GetChild(1).gameObject.transform.position.y);
         }
 
         if (IsGrounded())
@@ -99,16 +105,33 @@ public class Player : MonoBehaviour
                     Counter.C = 0;
                 }
             }
+
+            if(CurrentLevel == 21)
+            {
+                Rigidbody.gravityScale *= -1;
+                Spriterenderer.flipY = !Spriterenderer.flipY;
+            }
         }
         if (context.performed && CurrentLevel == 17)
         {
             Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
         }
     }
+
+    IEnumerator Ninja()
+    {
+        yield return new WaitForSeconds(1f);
+        Spriterenderer.enabled = false;
+
+
+        yield return new WaitForSeconds(1f);
+        Spriterenderer.enabled = true;
+
+        StartCoroutine(Ninja());
+    }
     public void Pause_Start(InputAction.CallbackContext context)
     {
         Debug.Log("Pause press");
-        //pause.PauseButton();
         if(Pause.IsPaused)
         {
             pause.OnPauseButtonClick();
@@ -125,20 +148,21 @@ public class Player : MonoBehaviour
     {
         DeathCount++;
         SceneManager.LoadScene(CurrentLevel);
-     /* GameObject Dead = Instantiate(DeadBody) as GameObject;
+
+      /*GameObject Dead = Instantiate(DeadBody) as GameObject;
         Dead.transform.position = transform.position;
         Dead.GetComponent<Rigidbody2D>().velocity = Rigidbody.velocity;
         Physics2D.IgnoreCollision(Dead.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
         transform.position = SpawnPoint.position;
-        gameObject.transform.GetChild(1).gameObject.SetActive(false);        */
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Key"))
         {
-            if(CurrentLevel != 13)
+            if (CurrentLevel != 13)
             {
                 Destroy(collision.gameObject);
                 gameObject.transform.GetChild(1).gameObject.SetActive(true);
@@ -148,6 +172,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Gate_On"))
         {
             animator.SetBool("Glitch", true);
+            Rigidbody.velocity = new Vector2(0,0);
+            Rigidbody.AddForce(new Vector2(3,3), ForceMode2D.Impulse);
         }
 
         if (collision.gameObject.CompareTag("Spikes"))
@@ -169,7 +195,6 @@ public class Player : MonoBehaviour
         if(collision.gameObject.CompareTag("Finish"))
         {
             Pass();
-            Camera.DDOL();
         }
 
         if (collision.gameObject.CompareTag("Switch"))

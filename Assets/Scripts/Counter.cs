@@ -41,20 +41,4 @@ public class Counter : MonoBehaviour
             gate.CloseGate();
         }
     }
-    /*
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Ground"))
-        {
-            Grounded = true;
-        }
-    }
-
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Ground"))
-        {
-            Grounded = false;
-        }
-    }*/
 }

@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    private TimeController time;
+    private void Start()
+    {
+        time = FindObjectOfType<TimeController>();
+    }
     public void OnLevelsButtonClick()
     {
         Debug.Log("Levels");
@@ -22,6 +27,8 @@ public class Menu : MonoBehaviour
         {
             SceneManager.LoadScene(PlayerPrefs.GetInt("LevelsUnlocked"));
         }
+
+        time.BeginTimer();
     }
     public void OnBackButtonClick()
     {

@@ -28,7 +28,6 @@ public class Gate : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Key"))
         {
-            //gameObject.SetActive(false);
             Debug.Log("Enter");
             animator.SetBool("Enter", true);
         }
@@ -38,7 +37,6 @@ public class Gate : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Key"))
         {
-            //gameObject.SetActive(false);
             Debug.Log("Enter");
             animator.SetBool("Enter", true);
         }

@@ -53,9 +53,4 @@ public class CameraManager : MonoBehaviour
         IsMuted = !IsMuted;
         AudioListener.pause = IsMuted;
     }
-
-    public void DDOL()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
 }
