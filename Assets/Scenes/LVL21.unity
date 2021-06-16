@@ -778,6 +778,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: 21.Gravity Girl
       objectReference: {fileID: 0}
+    - target: {fileID: 5310704967997530173, guid: 45ed391a794904542a3ddb55961859cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45ed391a794904542a3ddb55961859cb, type: 3}
 --- !u!1001 &881320835

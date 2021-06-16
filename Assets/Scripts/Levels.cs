@@ -12,7 +12,6 @@ public class Levels : MonoBehaviour
     public Button[] buttons;
 
     private TimeController time;
-    // Start is called before the first frame update
     void Start()
     {
         time = FindObjectOfType<TimeController>();

@@ -37,11 +37,11 @@ public class Player : MonoBehaviour
     }
     void Update()
     {        
-        if(CurrentLevel != 10 && CurrentLevel != 16 && CurrentLevel != 22)
+        if(CurrentLevel != 10 || CurrentLevel != 16 || CurrentLevel != 22 || CurrentLevel == 23)
         {
             Rigidbody.velocity = new Vector2(InputX * speed, Rigidbody.velocity.y);
         }
-        if (CurrentLevel == 16)
+        if (CurrentLevel == 16 || CurrentLevel == 23)
         {
             Rigidbody.velocity = new Vector2(-(InputX * speed), Rigidbody.velocity.y);
         }
@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if(CurrentLevel == 21)
+            if(CurrentLevel == 21 )
             {
                 Rigidbody.gravityScale *= -1;
                 Spriterenderer.flipY = !Spriterenderer.flipY;
@@ -132,15 +132,13 @@ public class Player : MonoBehaviour
     public void Pause_Start(InputAction.CallbackContext context)
     {
         Debug.Log("Pause press");
-        if(Pause.IsPaused)
+        if(pause.IsPaused)
         {
-            pause.OnPauseButtonClick();
-            Pause.IsPaused = !Pause.IsPaused;
+            pause.OnResumeButtonClick();
         }
         else
         {
-            pause.OnResumeButtonClick();
-            Pause.IsPaused = !Pause.IsPaused;
+            pause.OnPauseButtonClick();
         }
     }
 
@@ -224,6 +222,10 @@ public class Player : MonoBehaviour
     }
     private bool IsGrounded()
     {
+        if(CurrentLevel == 10 || CurrentLevel == 22)
+        {
+            return true;
+        }
         return transform.Find("GroundCheck").GetComponent<GroundCheck>().isGrounded;
     }
 }

@@ -12,7 +12,7 @@ public class Pause : MonoBehaviour
     public GameObject FirstButton;
     public Text Timer;
 
-    public static bool IsPaused = true;
+    public bool IsPaused = false;
 
     private CameraManager mute;
     void Start()
@@ -25,6 +25,7 @@ public class Pause : MonoBehaviour
     {
         PauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        IsPaused = true;
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(FirstButton);
@@ -34,7 +35,8 @@ public class Pause : MonoBehaviour
     {
         Debug.Log("Resume");
         PauseMenu.SetActive(false);
-        Time.timeScale = 1f;
+        IsPaused = false;
+        Time.timeScale = 1f;        
     }
 
     public void OnMenuButtonClick()
