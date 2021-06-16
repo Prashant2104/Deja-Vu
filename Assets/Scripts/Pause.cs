@@ -70,8 +70,8 @@ public class Pause : MonoBehaviour
 
     public void OnExitButtonPress()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-        //Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 
     public void Ending()

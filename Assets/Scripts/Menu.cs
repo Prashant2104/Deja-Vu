@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         time = FindObjectOfType<TimeController>();
+        time.IsTimer = false;
     }
     public void OnLevelsButtonClick()
     {
@@ -55,7 +56,7 @@ public class Menu : MonoBehaviour
 
     public void OnExitButtonPress()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-        //Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 }

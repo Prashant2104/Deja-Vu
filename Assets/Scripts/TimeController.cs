@@ -10,9 +10,9 @@ public class TimeController : MonoBehaviour
 
     public Text TimeText;
     public GameObject TimeObject;
+    public bool IsTimer;
 
     private TimeSpan TimePlayed;
-    private bool IsTimer;
     private float ElapsedTime;
 
     void Awake()
@@ -24,6 +24,17 @@ public class TimeController : MonoBehaviour
         }
         DontDestroyOnLoad(this);
         Timer = this;
+    }
+    private void Update()
+    {
+        if(IsTimer == false)
+        {
+            TimeObject.SetActive(false);
+        }
+        else
+        {
+            TimeObject.SetActive(true);
+        }
     }
 
     private void Start()
