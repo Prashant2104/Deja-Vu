@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
 {
     int CurrentLevel;
     
-    public int LivesRem;
-    public int LivesStart = 5;
+    //public int LivesRem;
+    //public int LivesStart = 5;
     public static int DeathCount = 0;
     public float speed, jump;
     public GameObject Key;
@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public Transform SpawnPoint;
 
     private Pause pause;
+    private End end;
     private CameraManager Camera;
     private Rigidbody2D Rigidbody;
     private float InputX;
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
         CurrentLevel = SceneManager.GetActiveScene().buildIndex;
         Camera = FindObjectOfType<CameraManager>();
         pause = FindObjectOfType<Pause>();
+        end = FindObjectOfType<End>();
         Rigidbody = GetComponent<Rigidbody2D>();
         Spriterenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -88,15 +90,16 @@ public class Player : MonoBehaviour
             animator.SetBool("Walk", false);
         }
 
-        if (DeathCount >= LivesStart)
+        /*if (DeathCount >= LivesStart)
         {
-            SceneManager.LoadScene("Game Over");
-        }        
+            SceneManager.LoadScene("Main Menu");
+            Time.timeScale = 1f;
+        }        */
     }
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         LivesRem = LivesStart - DeathCount;
-    }
+    }*/
 
     public void Move(InputAction.CallbackContext context)
     {
@@ -180,7 +183,7 @@ public class Player : MonoBehaviour
             }
             if (CurrentLevel == 24)
             {
-                pause.Ending(); 
+                end.Ending(); 
             }
         }
 

@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     {
         time = FindObjectOfType<TimeController>();
         time.IsTimer = false;
+        Time.timeScale = 1f;
     }
     public void OnLevelsButtonClick()
     {

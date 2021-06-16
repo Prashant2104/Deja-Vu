@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     public GameObject PauseMenu;
-    public GameObject EndPanel;
     public GameObject Camera;
     public GameObject FirstButton;
     //public Text Timer;
@@ -23,11 +22,10 @@ public class Pause : MonoBehaviour
         player = FindObjectOfType<Player>();
         mute = FindObjectOfType<CameraManager>();
         PauseMenu.SetActive(false);
-        EndPanel.SetActive(false);
     }
     private void FixedUpdate()
     {
-        Lives.text = "Lives = " + player.LivesRem;
+        Lives.text = "Deaths = " + Player.DeathCount;
     }
 
     public void OnPauseButtonClick()
@@ -65,7 +63,7 @@ public class Pause : MonoBehaviour
         Debug.Log("Mute");
         mute.Mute();
         OnResumeButtonClick();
-        IsPaused = !IsPaused;
+        IsPaused = false;
     }
 
     public void OnExitButtonPress()
@@ -74,14 +72,5 @@ public class Pause : MonoBehaviour
         Application.Quit();
     }
 
-    public void Ending()
-    {
-        StartCoroutine(End());
-    }
-    IEnumerator End()
-    {
-        EndPanel.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        OnMenuButtonClick();
-    }
+    
 }
