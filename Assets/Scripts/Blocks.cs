@@ -8,7 +8,6 @@ public class Blocks : MonoBehaviour
     int CurrentLevel;
     public float speed;
     private Rigidbody2D rigidBody2D;
-    // Start is called before the first frame update
     void Start()
     {
         CurrentLevel = SceneManager.GetActiveScene().buildIndex;
@@ -20,7 +19,6 @@ public class Blocks : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         rigidBody2D.velocity = new Vector2(speed, rigidBody2D.velocity.y);

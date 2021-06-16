@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     int CurrentLevel;
-
-    public int DeathCount = 0;
+    
+    public int LivesRem;
+    public int LivesStart = 5;
+    public static int DeathCount = 0;
     public float speed, jump;
     public GameObject Key;
     public GameObject DeadBody;
@@ -23,6 +26,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     void Start()
     {
+        Time.timeScale = 1f;
         CurrentLevel = SceneManager.GetActiveScene().buildIndex;
         Camera = FindObjectOfType<CameraManager>();
         pause = FindObjectOfType<Pause>();
@@ -33,6 +37,10 @@ public class Player : MonoBehaviour
         if (CurrentLevel == 18)
         {
             StartCoroutine(Ninja());
+        }
+        if (CurrentLevel == 16)
+        {
+            Time.timeScale = 0.25f;
         }
     }
     void Update()
@@ -80,10 +88,14 @@ public class Player : MonoBehaviour
             animator.SetBool("Walk", false);
         }
 
-        if (DeathCount >= 3)
+        if (DeathCount >= LivesStart)
         {
             SceneManager.LoadScene("Game Over");
-        }
+        }        
+    }
+    private void FixedUpdate()
+    {
+        LivesRem = LivesStart - DeathCount;
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -124,7 +136,7 @@ public class Player : MonoBehaviour
         Spriterenderer.enabled = false;
 
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
         Spriterenderer.enabled = true;
 
         StartCoroutine(Ninja());
@@ -146,6 +158,7 @@ public class Player : MonoBehaviour
     {
         DeathCount++;
         SceneManager.LoadScene(CurrentLevel);
+        Debug.Log("Deaths = " + DeathCount);
 
       /*GameObject Dead = Instantiate(DeadBody) as GameObject;
         Dead.transform.position = transform.position;
@@ -164,6 +177,10 @@ public class Player : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            }
+            if (CurrentLevel == 24)
+            {
+                pause.Ending(); 
             }
         }
 

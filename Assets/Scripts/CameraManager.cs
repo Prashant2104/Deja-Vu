@@ -9,7 +9,6 @@ public class CameraManager : MonoBehaviour
 
     private int LevelIndex;
     private Gate gate;
-    // Start is called before the first frame update
     void Start()
     {
         LevelIndex = SceneManager.GetActiveScene().buildIndex;
@@ -18,7 +17,6 @@ public class CameraManager : MonoBehaviour
         LevelIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (LevelIndex == 8)

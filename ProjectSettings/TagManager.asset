@@ -12,6 +12,7 @@ TagManager:
   - Switch
   - Dead
   - Counter
+  - Ending
   layers:
   - Default
   - TransparentFX

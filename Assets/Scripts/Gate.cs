@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class Gate : MonoBehaviour
 {
     private Animator animator;
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();

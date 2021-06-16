@@ -8,17 +8,26 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     public GameObject PauseMenu;
+    public GameObject EndPanel;
     public GameObject Camera;
     public GameObject FirstButton;
-    public Text Timer;
+    //public Text Timer;
 
     public bool IsPaused = false;
 
+    public Text Lives;
+    private Player player;
     private CameraManager mute;
     void Start()
     {
+        player = FindObjectOfType<Player>();
         mute = FindObjectOfType<CameraManager>();
         PauseMenu.SetActive(false);
+        EndPanel.SetActive(false);
+    }
+    private void FixedUpdate()
+    {
+        Lives.text = "Lives = " + player.LivesRem;
     }
 
     public void OnPauseButtonClick()
@@ -39,6 +48,12 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1f;        
     }
 
+    public void OnRetryButtonClick()
+    {
+        Time.timeScale = 1f;
+        player.Kill();
+    }
+
     public void OnMenuButtonClick()
     {
         SceneManager.LoadScene("Main Menu");
@@ -57,5 +72,16 @@ public class Pause : MonoBehaviour
     {
         UnityEditor.EditorApplication.isPlaying = false;
         //Application.Quit();
+    }
+
+    public void Ending()
+    {
+        StartCoroutine(End());
+    }
+    IEnumerator End()
+    {
+        EndPanel.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        OnMenuButtonClick();
     }
 }

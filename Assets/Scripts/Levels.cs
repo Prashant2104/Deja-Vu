@@ -32,7 +32,7 @@ public class Levels : MonoBehaviour
     public void LoadLevel(int LevelIndex)
     {
         SceneManager.LoadScene(LevelIndex);
-        time.BeginTimer();
+        time.Begin();
     }
     public void ResetProgression()
     {

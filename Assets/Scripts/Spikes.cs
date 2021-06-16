@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Spikes : MonoBehaviour
 {
     private Rigidbody2D RB;
-    // Start is called before the first frame update
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();

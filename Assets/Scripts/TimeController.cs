@@ -33,6 +33,15 @@ public class TimeController : MonoBehaviour
 
         TimeObject.SetActive(false);
     }
+    public void Begin()
+    {
+        StartCoroutine(Timerr());
+    }
+    IEnumerator Timerr()
+    {
+        yield return new WaitForSeconds(0.1f);
+        BeginTimer();
+    }
     public void BeginTimer()
     {
         IsTimer = true;
@@ -45,9 +54,9 @@ public class TimeController : MonoBehaviour
     {
         while (IsTimer)
         {
-            ElapsedTime += Time.deltaTime;
+            ElapsedTime += Time.unscaledDeltaTime;
             TimePlayed = TimeSpan.FromSeconds(ElapsedTime);
-            string TimeStr = "Time: " + TimePlayed.ToString("mm':'ss'.'f");
+            string TimeStr = TimePlayed.ToString("mm':'ss'.'f");
             TimeText.text = TimeStr;
 
             yield return null;
