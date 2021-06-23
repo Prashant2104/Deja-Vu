@@ -11,14 +11,14 @@ public class End : MonoBehaviour
     }
     public void Ending()
     {
-        StartCoroutine(xyz());
+        StartCoroutine(Xyz());
     }
     public void OnMenuButtonClick()
     {
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
     }
-    IEnumerator xyz()
+    IEnumerator Xyz()
     {
         EndPanel.SetActive(true);
         yield return new WaitForSeconds(5f);

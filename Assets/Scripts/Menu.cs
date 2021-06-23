@@ -14,13 +14,13 @@ public class Menu : MonoBehaviour
     }
     public void OnLevelsButtonClick()
     {
-        Debug.Log("Levels");
+        //Debug.Log("Levels");
         SceneManager.LoadScene("Levels");
     }
     public void OnPlayButtonClick()
     {
-        Debug.Log("Play");
-        Debug.Log(PlayerPrefs.GetInt("LevelsUnlocked"));
+        //Debug.Log("Play");
+        //Debug.Log(PlayerPrefs.GetInt("LevelsUnlocked"));
         if(PlayerPrefs.GetInt("LevelsUnlocked") == 0)
         {
             SceneManager.LoadScene(1);
@@ -39,19 +39,19 @@ public class Menu : MonoBehaviour
     }
     public void OnCreditsButtonPress()
     {
-        Debug.Log("Credits");
+        //Debug.Log("Credits");
         SceneManager.LoadScene("Credits");
     }
 
     public void OnHowToButtonPress()
     {
-        Debug.Log("HowTo");
+        //Debug.Log("HowTo");
         SceneManager.LoadScene("HowTo");
     }
 
     public void OnControlsButtonPress()
     {
-        Debug.Log("Controls");
+        //Debug.Log("Controls");
         SceneManager.LoadScene("Controls");
     }
 

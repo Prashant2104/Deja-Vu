@@ -14,12 +14,12 @@ public class Gate : MonoBehaviour
 
     public void OpenGate()
     {
-        Debug.Log("Enter");
+        //Debug.Log("Enter");
         animator.SetBool("Enter", true);
     }
     public void CloseGate()
     {
-        Debug.Log("Closed");
+        //Debug.Log("Closed");
         animator.SetBool("Enter", false);
     }
 
@@ -27,7 +27,7 @@ public class Gate : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Key"))
         {
-            Debug.Log("Enter");
+            //Debug.Log("Enter");
             animator.SetBool("Enter", true);
         }
     }
@@ -36,7 +36,7 @@ public class Gate : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Key"))
         {
-            Debug.Log("Enter");
+            //Debug.Log("Enter");
             animator.SetBool("Enter", true);
         }
     }

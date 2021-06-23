@@ -27,6 +27,7 @@ public class Levels : MonoBehaviour
         {
             buttons[i].interactable = true;
         }
+        time.IsTimer = false;
     }
 
     public void LoadLevel(int LevelIndex)

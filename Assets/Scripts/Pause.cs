@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     public GameObject PauseMenu;
+    public GameObject Hints;
     public GameObject Camera;
     public GameObject FirstButton;
     //public Text Timer;
@@ -22,6 +23,7 @@ public class Pause : MonoBehaviour
         player = FindObjectOfType<Player>();
         mute = FindObjectOfType<CameraManager>();
         PauseMenu.SetActive(false);
+        Hints.SetActive(false);
     }
     private void FixedUpdate()
     {
@@ -40,10 +42,16 @@ public class Pause : MonoBehaviour
 
     public void OnResumeButtonClick()
     {
-        Debug.Log("Resume");
+        //Debug.Log("Resume");
         PauseMenu.SetActive(false);
+        Hints.SetActive(false);
         IsPaused = false;
         Time.timeScale = 1f;        
+    }
+
+    public void OnHintsButtonClick()
+    {
+        Hints.SetActive(true);
     }
 
     public void OnRetryButtonClick()
@@ -60,7 +68,7 @@ public class Pause : MonoBehaviour
 
     public void OnMuteButtonClick()
     {
-        Debug.Log("Mute");
+        //Debug.Log("Mute");
         mute.Mute();
         OnResumeButtonClick();
         IsPaused = false;
@@ -71,6 +79,11 @@ public class Pause : MonoBehaviour
         //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
+    public void OnLevelsButtonClick()
+    {
+        //Debug.Log("Levels");
+        SceneManager.LoadScene("Levels");
+        Time.timeScale = 1f;
+    }
 
-    
 }

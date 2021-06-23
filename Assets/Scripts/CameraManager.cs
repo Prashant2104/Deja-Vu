@@ -30,6 +30,7 @@ public class CameraManager : MonoBehaviour
                 gate.CloseGate();
             }
         }
+        AudioListener.pause = IsMuted;
     }
 
     public void Move()
@@ -49,6 +50,5 @@ public class CameraManager : MonoBehaviour
     public void Mute()
     {
         IsMuted = !IsMuted;
-        AudioListener.pause = IsMuted;
     }
 }

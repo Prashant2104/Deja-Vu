@@ -9,8 +9,6 @@ public class Player : MonoBehaviour
 {
     int CurrentLevel;
     
-    //public int LivesRem;
-    //public int LivesStart = 5;
     public static int DeathCount = 0;
     public float speed, jump;
     public GameObject Key;
@@ -46,8 +44,8 @@ public class Player : MonoBehaviour
         }
     }
     void Update()
-    {        
-        if(CurrentLevel != 10 || CurrentLevel != 16 || CurrentLevel != 22 || CurrentLevel == 23)
+    {
+        if (CurrentLevel != 10 || CurrentLevel != 16 || CurrentLevel != 22 || CurrentLevel == 23)
         {
             Rigidbody.velocity = new Vector2(InputX * speed, Rigidbody.velocity.y);
         }
@@ -74,7 +72,7 @@ public class Player : MonoBehaviour
 
         if (IsGrounded())
         {
-            animator.SetBool("Jump", false);            
+            animator.SetBool("Jump", false);
         }
         else
         {
@@ -89,18 +87,7 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("Walk", false);
         }
-
-        /*if (DeathCount >= LivesStart)
-        {
-            SceneManager.LoadScene("Main Menu");
-            Time.timeScale = 1f;
-        }        */
     }
-    /*private void FixedUpdate()
-    {
-        LivesRem = LivesStart - DeathCount;
-    }*/
-
     public void Move(InputAction.CallbackContext context)
     {
         InputX = context.ReadValue<Vector2>().x;
@@ -146,14 +133,16 @@ public class Player : MonoBehaviour
     }
     public void Pause_Start(InputAction.CallbackContext context)
     {
-        Debug.Log("Pause press");
+        //Debug.Log("Pause press");
         if(pause.IsPaused)
         {
             pause.OnResumeButtonClick();
+            Time.timeScale = 1f;
         }
         else
         {
             pause.OnPauseButtonClick();
+            Time.timeScale = 0f;
         }
     }
 
@@ -161,7 +150,7 @@ public class Player : MonoBehaviour
     {
         DeathCount++;
         SceneManager.LoadScene(CurrentLevel);
-        Debug.Log("Deaths = " + DeathCount);
+        //Debug.Log("Deaths = " + DeathCount);
 
       /*GameObject Dead = Instantiate(DeadBody) as GameObject;
         Dead.transform.position = transform.position;
@@ -236,7 +225,7 @@ public class Player : MonoBehaviour
             PlayerPrefs.SetInt("LevelsUnlocked", CurrentLevel + 1);
         }
 
-        Debug.Log("Level unlocked = " + PlayerPrefs.GetInt("LevelsUnlocked"));
+        //Debug.Log("Level unlocked = " + PlayerPrefs.GetInt("LevelsUnlocked"));
 
         SceneManager.LoadScene(CurrentLevel + 1);
     }
