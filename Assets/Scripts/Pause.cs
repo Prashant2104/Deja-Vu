@@ -11,6 +11,7 @@ public class Pause : MonoBehaviour
     public GameObject Hints;
     public GameObject Camera;
     public GameObject FirstButton;
+    public GameObject ResumeButton;
     //public Text Timer;
 
     public bool IsPaused = false;
@@ -52,6 +53,9 @@ public class Pause : MonoBehaviour
     public void OnHintsButtonClick()
     {
         Hints.SetActive(true);
+        PauseMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(ResumeButton);
     }
 
     public void OnRetryButtonClick()

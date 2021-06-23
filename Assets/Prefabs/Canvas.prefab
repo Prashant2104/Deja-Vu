@@ -1101,6 +1101,7 @@ MonoBehaviour:
   Hints: {fileID: 3231182715601092792}
   Camera: {fileID: 0}
   FirstButton: {fileID: 2029515990409544392}
+  ResumeButton: {fileID: 6706734194553532088}
   IsPaused: 0
   Lives: {fileID: 1173902999790008730}
 --- !u!1 &3764731082450838739
