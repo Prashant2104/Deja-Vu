@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     int CurrentLevel;
-    
+
+    public bool Stop;
     public static int DeathCount = 0;
     public float speed, jump;
     public GameObject Key;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     void Start()
     {
+        Stop = true;
         Time.timeScale = 1f;
         CurrentLevel = SceneManager.GetActiveScene().buildIndex;
         Camera = FindObjectOfType<CameraManager>();
@@ -38,86 +40,89 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(Ninja());
         }
-        if (CurrentLevel == 16)
-        {
-            Time.timeScale = 0.25f;
-        }
     }
     void Update()
     {
-        if (CurrentLevel != 10 || CurrentLevel != 16 || CurrentLevel != 22 || CurrentLevel == 23)
+        if (Stop == true)
         {
-            Rigidbody.velocity = new Vector2(InputX * speed, Rigidbody.velocity.y);
-        }
-        if (CurrentLevel == 16 || CurrentLevel == 23)
-        {
-            Rigidbody.velocity = new Vector2(-(InputX * speed), Rigidbody.velocity.y);
-        }
-        if (CurrentLevel == 10 || CurrentLevel == 22)
-        {
-            Rigidbody.velocity = new Vector2(InputX * speed, InputY * (speed / 2));
-            animator.SetBool("Walk", false);
-        }
+            if (CurrentLevel != 10 || CurrentLevel != 16 || CurrentLevel != 22 || CurrentLevel == 23)
+            {
+                Rigidbody.velocity = new Vector2(InputX * speed, Rigidbody.velocity.y);
+            }
+            if (CurrentLevel == 16 || CurrentLevel == 23)
+            {
+                Rigidbody.velocity = new Vector2(-(InputX * speed), Rigidbody.velocity.y);
+            }
+            if (CurrentLevel == 10 || CurrentLevel == 22)
+            {
+                Rigidbody.velocity = new Vector2(InputX * speed, InputY * (speed / 2));
+                animator.SetBool("Walk", false);
+            }
 
-        if (Rigidbody.velocity.x > 0f)
-        {
-            Spriterenderer.flipX = false;
-            //gameObject.transform.GetChild(1).gameObject.transform.position = new Vector2(gameObject.transform.GetChild(1).gameObject.transform.position.x, gameObject.transform.GetChild(1).gameObject.transform.position.y);
-        }
-        else if (Rigidbody.velocity.x < 0f)
-        {
-            Spriterenderer.flipX = true;
-            //gameObject.transform.GetChild(1).gameObject.transform.position = new Vector2(gameObject.transform.GetChild(1).gameObject.transform.position.x * -1, gameObject.transform.GetChild(1).gameObject.transform.position.y);
-        }
+            if (Rigidbody.velocity.x > 0f)
+            {
+                Spriterenderer.flipX = false;
+                //gameObject.transform.GetChild(1).gameObject.transform.position = new Vector2(gameObject.transform.GetChild(1).gameObject.transform.position.x, gameObject.transform.GetChild(1).gameObject.transform.position.y);
+            }
+            else if (Rigidbody.velocity.x < 0f)
+            {
+                Spriterenderer.flipX = true;
+                //gameObject.transform.GetChild(1).gameObject.transform.position = new Vector2(gameObject.transform.GetChild(1).gameObject.transform.position.x * -1, gameObject.transform.GetChild(1).gameObject.transform.position.y);
+            }
 
-        if (IsGrounded())
-        {
-            animator.SetBool("Jump", false);
-        }
-        else
-        {
-            animator.SetBool("Jump", true);
-        }
+            if (IsGrounded())
+            {
+                animator.SetBool("Jump", false);
+            }
+            else
+            {
+                animator.SetBool("Jump", true);
+            }
 
-        if (Rigidbody.velocity.x >= 0.1 && IsGrounded() || Rigidbody.velocity.x <= -0.1 && IsGrounded())
-        {
-            animator.SetBool("Walk", true);
-        }
-        else
-        {
-            animator.SetBool("Walk", false);
+            if (Rigidbody.velocity.x >= 0.1 && IsGrounded() || Rigidbody.velocity.x <= -0.1 && IsGrounded())
+            {
+                animator.SetBool("Walk", true);
+            }
+            else
+            {
+                animator.SetBool("Walk", false);
+            }
         }
     }
     public void Move(InputAction.CallbackContext context)
     {
-        InputX = context.ReadValue<Vector2>().x;
-        InputY = context.ReadValue<Vector2>().y;
+        
+            InputX = context.ReadValue<Vector2>().x;
+            InputY = context.ReadValue<Vector2>().y;
+        
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed && IsGrounded())
-        {
-            Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
-            if(CurrentLevel == 15)
+        
+            if (context.performed && IsGrounded())
             {
-                Counter.C++;
-                if(Counter.C == 10)
+                Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
+                if (CurrentLevel == 15)
                 {
-                    Counter.C = 0;
+                    Counter.C++;
+                    if (Counter.C == 10)
+                    {
+                        Counter.C = 0;
+                    }
+                }
+
+                if (CurrentLevel == 21)
+                {
+                    Rigidbody.gravityScale *= -1;
+                    Spriterenderer.flipY = !Spriterenderer.flipY;
                 }
             }
-
-            if(CurrentLevel == 21 )
+            if (context.performed && CurrentLevel == 17)
             {
-                Rigidbody.gravityScale *= -1;
-                Spriterenderer.flipY = !Spriterenderer.flipY;
+                Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
             }
-        }
-        if (context.performed && CurrentLevel == 17)
-        {
-            Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
-        }
+        
     }
 
     IEnumerator Ninja()
@@ -134,15 +139,18 @@ public class Player : MonoBehaviour
     public void Pause_Start(InputAction.CallbackContext context)
     {
         //Debug.Log("Pause press");
-        if(pause.IsPaused)
+        if(context.performed)
         {
-            pause.OnResumeButtonClick();
-            Time.timeScale = 1f;
-        }
-        else
-        {
-            pause.OnPauseButtonClick();
-            Time.timeScale = 0f;
+            if (pause.IsPaused)
+            {
+                pause.OnResumeButtonClick();
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                pause.OnPauseButtonClick();
+                Time.timeScale = 0f;
+            }
         }
     }
 
@@ -169,11 +177,7 @@ public class Player : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 gameObject.transform.GetChild(1).gameObject.SetActive(true);
-            }
-            if (CurrentLevel == 24)
-            {
-                end.Ending(); 
-            }
+            }            
         }
 
         if (collision.gameObject.CompareTag("Gate_On"))
@@ -186,6 +190,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Spikes"))
         {
             Kill();
+        }
+
+        if (collision.gameObject.CompareTag("Ending"))
+        {
+            end.Ending();
+            Stop = false;
         }
     }
 

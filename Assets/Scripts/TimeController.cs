@@ -65,7 +65,7 @@ public class TimeController : MonoBehaviour
     {
         while (IsTimer)
         {
-            ElapsedTime += Time.unscaledDeltaTime;
+            ElapsedTime += Time.deltaTime;
             TimePlayed = TimeSpan.FromSeconds(ElapsedTime);
             string TimeStr = TimePlayed.ToString("mm':'ss'.'f");
             TimeText.text = TimeStr;

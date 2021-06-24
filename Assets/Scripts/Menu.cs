@@ -54,7 +54,10 @@ public class Menu : MonoBehaviour
         //Debug.Log("Controls");
         SceneManager.LoadScene("Controls");
     }
-
+    public void OnStoryButtonClick()
+    {
+        SceneManager.LoadScene("Story");
+    }
     public void OnExitButtonPress()
     {
         //UnityEditor.EditorApplication.isPlaying = false;

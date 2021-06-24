@@ -618,13 +618,13 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'WASD/Arrow keys for movement
 
-    SpaceBar to jump
+    SpaceBar/W/Up arrow to jump
 
-    Esc to pause/play
+    Esc
+    to pause/play
 
 
-    Left
-    stick for movement
+    Left stick for movement
 
     B/O for jump
 
