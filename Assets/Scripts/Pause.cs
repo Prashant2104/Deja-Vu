@@ -32,6 +32,7 @@ public class Pause : MonoBehaviour
     public void OnPauseButtonClick()
     {
         PauseMenu.SetActive(true);
+        Hints.SetActive(false);
         Time.timeScale = 0f;
         IsPaused = true;
 
@@ -53,7 +54,7 @@ public class Pause : MonoBehaviour
         Hints.SetActive(true);
         PauseMenu.SetActive(false);
 
-        EventSystem.current.SetSelectedGameObject(null);
+        //EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(ResumeButton);
     }
 
@@ -73,14 +74,6 @@ public class Pause : MonoBehaviour
     {
         //Debug.Log("Mute");
         mute.Mute();
-       /* if (mute.IsMuted == true)
-        {
-            gameObject.GetComponentInChildren<Text>().text = "Unmute";
-        }
-        if (mute.IsMuted == false)
-        {
-            gameObject.GetComponentInChildren<Text>().text = "Mute";
-        }*/
         OnResumeButtonClick();
         IsPaused = false;
     }

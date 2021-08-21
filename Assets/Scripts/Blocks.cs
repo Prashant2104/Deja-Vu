@@ -15,7 +15,7 @@ public class Blocks : MonoBehaviour
         
         if (CurrentLevel == 6)
         {
-            speed = Random.Range(1f, 10f);
+            speed = Random.Range(0.5f, 8f);
         }
     }
 

@@ -44,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Hint",
+                    "type": "Button",
+                    "id": "764b3f81-20b7-4fd7-9786-661bd154d59c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -332,6 +340,28 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "325c9778-3464-417b-a2ad-50be03e39bc8",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Hint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b60228ba-af74-4464-95ea-a44bfd31ecf3",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Hint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -423,6 +453,14 @@
                     "name": "Pause",
                     "type": "Button",
                     "id": "cea76121-0d5a-4f75-9f47-c44ef7d984a0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Hint",
+                    "type": "Button",
+                    "id": "bdc35f34-9c84-4fb2-9432-aa4d9750b10d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -899,6 +937,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33481c87-b027-40a3-9210-f8d0999f53b4",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Hint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f45732cc-b034-424e-8a08-d032e955c0a3",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Hint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -29,7 +29,6 @@ public class Menu : MonoBehaviour
         {
             SceneManager.LoadScene(PlayerPrefs.GetInt("LevelsUnlocked"));
         }
-
         time.Begin();
     }
 

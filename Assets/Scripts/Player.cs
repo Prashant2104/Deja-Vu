@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         Spriterenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
-        if (CurrentLevel == 18)
+        if (CurrentLevel == 17)
         {
             StartCoroutine(Ninja());
         }
@@ -45,18 +45,18 @@ public class Player : MonoBehaviour
     {
         if (Stop == true)
         {
-            if (CurrentLevel != 10 || CurrentLevel != 16 || CurrentLevel != 22 || CurrentLevel == 23)
+            if (CurrentLevel != 10 || CurrentLevel != 16 || CurrentLevel != 21 || CurrentLevel == 20)
             {
                 Rigidbody.velocity = new Vector2(InputX * speed, Rigidbody.velocity.y);
             }
-            if (CurrentLevel == 16 || CurrentLevel == 23)
+            if (CurrentLevel == 16 || CurrentLevel == 20)
             {
                 Rigidbody.velocity = new Vector2(-(InputX * speed), Rigidbody.velocity.y);
             }
-            if (CurrentLevel == 10 || CurrentLevel == 22)
+            if (CurrentLevel == 10 || CurrentLevel == 21)
             {
-                Rigidbody.velocity = new Vector2(InputX * speed, InputY * (speed / 2));
                 animator.SetBool("Walk", false);
+                Rigidbody.velocity = new Vector2(InputX * speed, InputY * (speed / 2));
             }
 
             if (Rigidbody.velocity.x > 0f)
@@ -99,32 +99,30 @@ public class Player : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        
-            if (context.performed && IsGrounded())
-            {
-                Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
-                if (CurrentLevel == 15)
-                {
-                    Counter.C++;
-                    if (Counter.C == 10)
-                    {
-                        Counter.C = 0;
-                    }
-                }
 
-                if (CurrentLevel == 21)
+        if (context.performed && IsGrounded())
+        {
+            Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
+            if (CurrentLevel == 15)
+            {
+                Counter.C++;
+                if (Counter.C == 10)
                 {
-                    Rigidbody.gravityScale *= -1;
-                    Spriterenderer.flipY = !Spriterenderer.flipY;
+                    Counter.C = 0;
                 }
             }
-            if (context.performed && CurrentLevel == 17)
+
+            if (CurrentLevel == 23)
             {
-                Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
+                Rigidbody.gravityScale *= -1;
+                Spriterenderer.flipY = !Spriterenderer.flipY;
             }
-        
+        }
+        if (context.performed && CurrentLevel == 17)
+        {
+            Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jump);
+        }
     }
-
     IEnumerator Ninja()
     {
         yield return new WaitForSeconds(1f);
@@ -153,20 +151,18 @@ public class Player : MonoBehaviour
             }
         }
     }
+    public void Hints(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            pause.OnHintsButtonClick();
+        }
+    }
 
     public void Kill()
     {
         DeathCount++;
         SceneManager.LoadScene(CurrentLevel);
-        //Debug.Log("Deaths = " + DeathCount);
-
-      /*GameObject Dead = Instantiate(DeadBody) as GameObject;
-        Dead.transform.position = transform.position;
-        Dead.GetComponent<Rigidbody2D>().velocity = Rigidbody.velocity;
-        Physics2D.IgnoreCollision(Dead.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-
-        transform.position = SpawnPoint.position;
-        gameObject.transform.GetChild(1).gameObject.SetActive(false);*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

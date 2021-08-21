@@ -581,8 +581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -3.6}
-  m_SizeDelta: {x: 450, y: 257.12152}
+  m_AnchoredPosition: {x: 100, y: -5.42}
+  m_SizeDelta: {x: 450, y: 260.75958}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1304761408
 MonoBehaviour:
@@ -605,7 +605,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f1c32d4b51713c4595f384dad4293d5, type: 3}
-    m_FontSize: 25
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.87
   m_Text: 'WASD/Arrow keys for movement
 
     SpaceBar/W/Up arrow to jump
@@ -623,12 +623,17 @@ MonoBehaviour:
     Esc
     to pause/play
 
+    H for Hints
+
 
     Left stick for movement
 
     B/O for jump
 
-    Start to pause/play'
+    Start
+    to pause/play
+
+    Y for hints'
 --- !u!222 &1304761409
 CanvasRenderer:
   m_ObjectHideFlags: 0

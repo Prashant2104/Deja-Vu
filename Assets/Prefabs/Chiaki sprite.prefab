@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b694abf5a58d34583145116bcee88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stop: 0
   speed: 4
   jump: 8.2
   Key: {fileID: 5519372938789464202, guid: 2a9366eb510ccd341a0b4269d375d908, type: 3}
@@ -326,7 +327,18 @@ MonoBehaviour:
     m_ActionId: 4500c061-f227-48ee-8909-7b128a3bf937
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4463474281481628396}
+        m_MethodName: Pause_Start
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cea76121-0d5a-4f75-9f47-c44ef7d984a0
     m_ActionName: UI/Pause[/Keyboard/escape,/XInputControllerWindows/start]
   - m_PersistentCalls:
@@ -344,6 +356,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ab836f4e-d4bb-4f83-9639-b5838ecadaf1
     m_ActionName: Player/Pause[/XInputControllerWindows/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4463474281481628396}
+        m_MethodName: Hints
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bdc35f34-9c84-4fb2-9432-aa4d9750b10d
+    m_ActionName: UI/Hint[/Keyboard/h,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4463474281481628396}
+        m_MethodName: Hints
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 764b3f81-20b7-4fd7-9786-661bd154d59c
+    m_ActionName: Player/Hint[/XInputControllerWindows/buttonNorth,/Keyboard/h]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
